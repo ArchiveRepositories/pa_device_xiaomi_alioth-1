@@ -257,6 +257,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.volume.filenames_mode="aes-256-cts" \
     ro.hardware.keystore_desede=true
 
+# Media
+PRODUCT_PACKAGES += \
+    libavservices_minijail.vendor
+
 # Media (VPP)
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.media.video.frc=false \
@@ -299,7 +303,20 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 TARGET_BOARD_PLATFORM := kona
 
 # QTI
-TARGET_COMMON_QTI_COMPONENTS := all
+TARGET_COMMON_QTI_COMPONENTS := \
+    audio \
+    bt \
+    display \
+    gps \
+    init \
+    nq-nfc \
+    overlay \
+    perf \
+    telephony \
+    usb \
+    vibrator \
+    wfd \
+    wlan
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
